@@ -1,8 +1,6 @@
-FROM python:3.13-alpine
+FROM python:alpine
 
-
-COPY main.py requirements.txt /app/
+COPY . /app/
 WORKDIR /app
 RUN pip install -r requirements.txt
-
-CMD [ "uvicorn", "main:app", "--reload", "--host=0.0.0.0" ]
+CMD [ "python", "app.py" ]
